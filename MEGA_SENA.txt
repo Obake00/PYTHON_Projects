@@ -1,0 +1,24 @@
+from random import shuffle
+from time import sleep
+
+loto = list(range(0,61))
+
+print('~~'*5)
+print('\33[1:35mMEGA SENA\33[m')
+print('~~'*5)
+
+while True:
+    resp = str(input('\33[4mDESEJA GERAR UM NOVO JOGO?\33[m [S/N]\n: ')).strip().upper()[0]
+    if resp == 'S':
+        shuffle(loto)
+        print(f'\33[4;36mJOGO\33[m >>> {sorted(loto[0:6])}\n')
+
+    elif resp == 'N':
+        break
+
+    else:
+        sleep(1)
+        print(f'\33[1;31merro\33[m >>> \33[7m{resp}\33[m Ñ É UMA ENTRADA VALIDA!!, \33[4mresponda apenas com\33[m S \33[4mou\33[m N\n')
+        sleep(1)
+sleep(2)
+print('\n\33[7mOBRIGADO!!!\33[m')

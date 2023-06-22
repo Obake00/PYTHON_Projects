@@ -1,0 +1,23 @@
+from random import shuffle
+
+loto = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25]
+
+print('~~'*5)
+print('\33[1:35mLOTO FACIL\33[m')
+print('~~'*5)
+
+while True:
+    resp = str(input('\33[4mDESEJA GERAR UM NOVO JOGO?\33[m [S/N]\n: ')).strip().upper()[0]
+    if resp == 'S':
+        shuffle(loto)
+        print(f'\33[4;36mJOGO\33[m >>> {sorted(loto[0:15])}\n')
+
+    elif resp == 'N':
+        break
+
+    else:
+        print('\33[1;31merro\33[m')
+
+print('\nObrigado!!!')

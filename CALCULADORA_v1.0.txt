@@ -1,0 +1,88 @@
+from time import sleep
+
+print('='*21)
+print('\33[1;36mCALCULADOR ARITMETICO\33[m')
+print('='*21)
+
+pro = ('\33[7;35mPROCESSANDO. . .\33[m')
+
+while True:
+    resposta = int(input('\33[7mDigite abaixo a ferramenta de uso\33[m\n[1]CALCULADORA\n[2]TABUADA\n\n[0]SAIR\n>>: '))
+    if resposta == 1:
+        print(pro)
+        sleep(2)
+        print('CALCULADORA')
+        sleep(1)
+        while True:
+            operador = int(input('\n\33[1mQual operação deseja realiza?\33[m\n[1]SOMA\n[2]SUBTRAÇÃO\n[3]MULTIPLICAÇÃO\n[4]DIVISÃO\n\n[5]SAIR\n>>: '))
+
+            if operador == 1:
+                x = int(input('Digite o primeiro numero: '))
+                y = int(input('Agora digite o proximo numero: '))
+                soma = x + y
+                print(f'O resultado desta operação é {soma}\n')
+                sleep(1)
+
+            elif operador == 2:
+                x = int(input('Digite o primeiro numero: '))
+                y = int(input('Agora digite o proximo numero: '))
+                if x > y:
+                    sub = x - y
+                else:
+                    sub = y - x
+                print(f'O resultado desta operação é {sub}\n')
+                sleep(1)
+
+            elif operador == 3:
+                x = int(input('Digite o primeiro numero: '))
+                y = int(input('Agora digite o proximo numero: '))
+                mult = x * y
+                print(f'O resultado desta operação é {mult}\n')
+                sleep(1)
+
+            elif operador == 4:
+                x = int(input('Digite o primeiro numero: '))
+                y = int(input('Agora digite o proximo numero: '))
+                div = x / y
+                print('O resultado desta operação é {:.1f}\n'.format(div))
+                sleep(1)
+
+            elif operador == 5:
+                break
+
+            else:
+                print('\33[7;31mERROr\33[m')
+
+    elif resposta == 2:
+        contador = 0
+        print('TABUADA')
+        n = int(input('Qual numero gostaria de consultar sua tabuada [1 a 9]: '))
+        contador = 0
+        for i in range(1, 11):
+            contador += 1
+            resultado = n * contador
+            print(f'{n} x {contador} = {resultado}')
+
+        while True:
+            resposta = str(input('Deseja consultar mais algum numero? [S/N]: ')).upper()
+            if resposta == 'S':
+                n = int(input('Qual numero gostaria de consultar sua tabuada [1 a 9]: '))
+                contador = 0
+                for i in range(1, 11):
+                    contador += 1
+                    resultado = n * contador
+                    print(f'{n} x {contador} = {resultado}')
+
+            elif resposta == 'N':
+                break
+
+            else:
+                print('\33[7;31mERROr\33[m')
+
+    elif resposta == 0:
+        break
+        sleep(2)
+    else:
+        print('\33[7;31mERROr\33[m')
+
+print('\n\33[1;36mFIM DO PROGRAMA\33[m')
