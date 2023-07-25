@@ -1,0 +1,25 @@
+saldo = 2000
+
+print('''
+========== Bem-Vindo ========== 
+====== Banco InterMoney =======
+''')
+usuario = input('Entre com nome da conta: ')
+opcao = int(input('''
+===== Entre com a opção de operação =====
+ 1 - Saldo em conta
+ 2 - Sacar
+ 3 - Depositar
+ : 
+'''))
+
+if opcao == 1:
+    print(f'Seu saldo é R$: {saldo}')
+elif opcao == 2:
+    saque = int(input('Digite o valor de retirada: '))
+    print(f'Retirada no valor de R$: {saque} Efetuada com sucesso!!\nNovo saldo R$: {(saldo-saque)} ')
+elif opcao == 3:
+    deposito = int(input(f'Por favor digite valor a ser depositado: '))
+    print(f'Operação realizada com sucesso!! Valor depositado R$: {deposito}, novo saldo em conta R$: {(saldo+deposito)}')
+else:
+    print('Obrigado pela preferencia, banco InterMoney agradece!')
